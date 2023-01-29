@@ -18,6 +18,37 @@ body {
   text-decoration: none;
 }
 
+.title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
+}
+
+.pre-title {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+}
+
+.after-title {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+}
+
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 /*-------------------HEADER------------------*/
 
 .header {
@@ -58,14 +89,7 @@ body {
 }
 
 .header-btn {
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   color: var(--main-btn-color);
-  cursor: pointer;
 }
 
 .main-page {
@@ -90,10 +114,6 @@ body {
 }
 
 .hero-pretitle {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 11.36;
-  text-transform: uppercase;
   color: rgba(157, 164, 189, 0.6);
 }
 
@@ -107,9 +127,6 @@ body {
 }
 
 .hero-after-title {
-  font-size: 18px;
-  line-height: 1.67;
-  letter-spacing: 0.02em;
   color: #9da4bd;
 }
 
@@ -125,26 +142,14 @@ body {
 }
 
 .about-pretitle {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  text-transform: uppercase;
   color: var(--second-title-color);
 }
 
 .about-title {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 1.17;
-  letter-spacing: 0.05em;
   color: var(--second-title-color);
 }
 
 .about-after-title {
-  font-size: 18px;
-  line-height: 1.67;
-  letter-spacing: 0.02em;
   color: #555555;
 }
 
@@ -156,14 +161,7 @@ body {
 }
 
 .about-btn {
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   color: var(--second-btn-color);
-  cursor: pointer;
 }
 
 /*-------------------PRICES------------------*/
@@ -172,20 +170,10 @@ body {
 }
 
 .price-pretitle {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  text-transform: uppercase;
   color: rgba(157, 164, 189, 0.6);
 }
 
 .price-title {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 1.17;
-  letter-spacing: 0.05em;
-
   color: var(--main-title-color);
 }
 
@@ -203,14 +191,7 @@ body {
 }
 
 .price-btn {
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   color: var(--main-btn-color);
-  cursor: pointer;
 }
 
 /*-------------------BENEFITS------------------*/
@@ -229,6 +210,7 @@ body {
   font-size: 42px;
   line-height: 1.36;
   letter-spacing: 0.05em;
+  text-align: center;
   color: #303030;
 }
 
@@ -236,30 +218,19 @@ body {
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
+  text-align: center;
   color: #303030;
 }
 
 .benefits-pretitle {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  text-transform: uppercase;
   color: #303030;
 }
 
 .benefits-title {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 1.17;
-  letter-spacing: 0.05em;
   color: var(--second-title-color);
 }
 
 .benefits-after-title {
-  font-size: 18px;
-  line-height: 1.67;
-  letter-spacing: 0.02em;
   color: #555555;
 }
 
@@ -269,19 +240,10 @@ body {
 }
 
 .barbers-pretitle {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  text-transform: uppercase;
   color: var(--second-title-color);
 }
 
 .barbers-title {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 1.17;
-  letter-spacing: 0.05em;
   color: var(--second-title-color);
 }
 
@@ -292,9 +254,11 @@ body {
 }
 
 .barbers-name {
+  font-weight: 400;
   font-size: 18px;
   line-height: 1.39;
   letter-spacing: 0.02em;
+  text-align: center;
   color: #303030;
 }
 
@@ -302,6 +266,7 @@ body {
   font-size: 14px;
   line-height: 1.36;
   letter-spacing: 0.02em;
+  text-align: center;
   color: #ff6c00;
 }
 
@@ -319,12 +284,21 @@ body {
 .gallery-section {
 }
 
-.gallery-text {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  text-transform: uppercase;
+.gallery-pretitle {
   color: #303030;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 .gallery-list {
