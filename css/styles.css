@@ -39,7 +39,6 @@ address {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
-  outline: 2px solid red;
 }
 
 .list {
@@ -59,10 +58,21 @@ address {
 }
 
 .pre-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   text-transform: uppercase;
+}
+
+.pre-title::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: currentColor;
 }
 
 .after-title {
@@ -74,10 +84,11 @@ address {
 .btn {
   min-width: 160px;
   height: 40px;
-  border: 1px solid #ff6c00;
+  border: 1px solid var(--accent-color);
   border-radius: 25px;
 
   background-color: transparent;
+
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
@@ -85,6 +96,19 @@ address {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 /*-------------------HEADER------------------*/
@@ -104,7 +128,6 @@ header .container {
 .header-navigation {
   display: flex;
   align-items: center;
-
   margin-right: auto;
 }
 
@@ -124,11 +147,12 @@ header .container {
   padding-top: 20px;
   padding-bottom: 20px;
 
+  color: #ffffff;
+
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.1em;
-  color: #ffffff;
 }
 
 .header-nav-link:hover,
@@ -141,12 +165,13 @@ header .container {
   padding-top: 20px;
   padding-bottom: 20px;
 
+  color: #ffffff;
+
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
 }
 
 .header-btn {
@@ -173,11 +198,12 @@ header .container {
 }
 
 .hero-link {
+  color: #303030;
+
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   letter-spacing: 0.2em;
-  color: #303030;
 }
 
 .hero-link:hover,
@@ -190,6 +216,14 @@ header .container {
   padding: 272px 100px 208px;
 
   background-color: #303030;
+  background-image: linear-gradient(
+      rgba(25, 28, 38, 0.2),
+      rgba(25, 28, 38, 0.2)
+    ),
+    url(../images/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-pre-title {
@@ -201,12 +235,13 @@ header .container {
 .hero-title {
   margin-bottom: 20px;
 
+  color: var(--main-title-color);
+
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 72px;
   line-height: 85px;
   letter-spacing: 0.05em;
-  color: var(--main-title-color);
 }
 
 .hero-after-title {
@@ -260,10 +295,11 @@ header .container {
 .about-text {
   margin-bottom: 42px;
 
+  color: #555555;
+
   font-size: 14px;
   line-height: 1.86;
   letter-spacing: 0.02em;
-  color: #555555;
 }
 
 .about-btn {
@@ -273,10 +309,16 @@ header .container {
 /*-------------------PRICES------------------*/
 
 .price-section {
+  max-width: 1600px;
+  margin: 0 auto;
   padding-top: 120px;
   padding-bottom: 120px;
 
-  background-color: #303030;
+  background-color: #111319;
+  background-image: url(../images/prices-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .price-pre-title {
@@ -293,18 +335,44 @@ header .container {
 
 .prices-wrap {
   display: flex;
+  gap: 30px;
+}
+
+.price-list:nth-child(1) {
+  background-image: linear-gradient(
+    180deg,
+    #171a24 0%,
+    rgba(23, 26, 36, 0.2) 100%
+  );
+}
+
+.price-list:nth-child(2) {
+  background-image: linear-gradient(
+    180deg,
+    #090b13 0%,
+    rgba(9, 11, 19, 0.2) 100%
+  );
 }
 
 .price-list {
   margin-bottom: 44px;
   padding: 30px 20px;
-  border: 1px solid #fff;
   width: calc((100%-30px) / 2);
 }
 
 .price-list-item {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.price-list-item::before {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+
+  background-color: rgba(157, 164, 189, 0.12);
 }
 
 .price-list-item + .price-list-item {
@@ -312,15 +380,21 @@ header .container {
 }
 
 .price-text {
+  color: #9da4bd;
+
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
-  color: #9da4bd;
+}
+
+.price-text:first-child {
+  order: -1;
 }
 
 .price-btn {
   display: block;
   margin: 0 auto;
+
   color: var(--main-btn-color);
 }
 
@@ -331,36 +405,73 @@ header .container {
   padding-bottom: 120px;
 }
 
+.benefits-container {
+  display: flex;
+  gap: 130px;
+  padding-left: 85px;
+}
+
 .benefits-list {
+  display: flex;
+  width: 370px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 .benefits-item-list {
   width: 170px;
   height: 133px;
   padding: 20px 24px;
-  border: 1px solid black;
 
   background-color: #f7f7f7;
+}
+
+.benefits-item-list:nth-child(odd) {
+  margin-right: 30px;
+}
+
+.benefits-item-list:nth-child(even) {
+  margin-top: 30px;
+}
+
+.benefits-item-list > span::after {
+  content: '+';
+
+  color: transparent;
+  text-shadow: 0 9px var(--accent-color);
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: calc(22 / 16);
+  text-align: center;
+  vertical-align: top;
 }
 
 .benefits-number {
   display: block;
   margin-bottom: 6px;
 
+  color: #303030;
+
   font-weight: 700;
   font-size: 42px;
   line-height: 1.36;
   letter-spacing: 0.05em;
   text-align: center;
-  color: #303030;
 }
 
 .benefits-text {
+  color: #303030;
+
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   text-align: center;
-  color: #303030;
+}
+
+.benefits-content-wrap {
+  max-width: 500px;
+  padding-top: 9px;
 }
 
 .benefits-pre-title {
@@ -416,33 +527,50 @@ header .container {
 .barbers-name {
   margin-bottom: 8px;
 
+  color: #303030;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 1.39;
   letter-spacing: 0.02em;
   text-align: center;
-  color: #303030;
 }
 
 .barbers-position {
+  margin-bottom: 30px;
+
+  color: #ff6c00;
+
   font-size: 14px;
   line-height: 1.36;
   letter-spacing: 0.02em;
   text-align: center;
-  color: #ff6c00;
 }
 
 .social-links-list {
   display: flex;
   justify-content: center;
-  margin: -5px;
+  gap: 10px;
 }
 
 .social-links-list-item {
-  margin: 5px;
+  width: 44px;
+  height: 44px;
 }
 
 .social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  background-color: #fff;
+}
+
+.social-links-list-item:is(:hover, :focus) .social-link-icon {
+  fill: #ff6c00;
 }
 
 /*-------------------GALLERY------------------*/
@@ -460,19 +588,6 @@ header .container {
   color: #303030;
 }
 
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  margin: -1px;
-}
-
 .gallery-list {
   display: flex;
   gap: 30px;
@@ -481,24 +596,62 @@ header .container {
 .gallery-list-item {
 }
 
-.footer {
-  background-color: #303030;
+/*-------------------CONTACTS------------------*/
+
+.contacts-wrap {
+  max-width: 1600px;
+  margin: 0 auto;
+
+  background-color: #191c26;
+  background-image: url(../images/contacts-bg.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: calc(50% - 15px) 100%;
 }
 
-.contacts > h2 {
+.contacts-container {
+  display: flex;
+}
+
+.online {
+  width: calc(50% + 15px);
+  padding-top: 130px;
+}
+
+.contacts {
+  width: calc(50% - 15px);
+  padding-top: 130px;
+  padding-left: 100px;
+  padding-bottom: 120px;
+}
+
+.contacts-container h2 {
   margin-bottom: 40px;
 
-  font-family: 'Raleway';
-  font-size: 42px;
-  line-height: calc(49 / 42);
-  letter-spacing: 0.05em;
-  color: #fff;
+  color: var(--main-title-color);
 }
 
 .contacts li .link:first-child {
+  color: #9da4bd;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
-  color: #9da4bd;
+}
+
+/*-------------------FOOTER------------------*/
+
+.footer {
+}
+
+.copyright-wrap {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #f7f7f7;
+}
+
+.footer-list {
+  display: flex;
 }
