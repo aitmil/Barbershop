@@ -47,6 +47,13 @@ address {
 
 .link {
   text-decoration: none;
+
+  transition: color 250ms linear;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--accent-color);
 }
 
 .title {
@@ -96,6 +103,13 @@ address {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   cursor: pointer;
+
+  transition: color 250ms linear, background-color 250ms linear;
+}
+
+.btn:is(:hover, :focus) {
+  background-color: var(--accent-color);
+  color: var(--main-btn-color);
 }
 
 .visually-hidden {
@@ -114,10 +128,10 @@ address {
 /*-------------------HEADER------------------*/
 
 .header {
+  position: absolute;
+  width: 100%;
   padding-top: 32px;
   padding-bottom: 32px;
-
-  background-color: grey;
 }
 
 header .container {
@@ -147,30 +161,17 @@ header .container {
   padding-top: 20px;
   padding-bottom: 20px;
 
-  color: #ffffff;
+  color: #fff;
 
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.1em;
-}
-
-.header-nav-link:hover,
-.header-nav-link:focus {
-  color: var(--accent-color);
 }
 
 .header-tel {
   margin-right: 43px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 
-  color: #ffffff;
-
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -190,8 +191,34 @@ header .container {
   display: flex;
 }
 
-.hero-list {
+.hero-social-wrap {
+  display: flex;
+  align-items: flex-end;
+
+  position: relative;
+  padding-left: 27px;
+  padding-bottom: 40px;
+
   width: 100px;
+}
+
+.hero-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  position: absolute;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
+}
+
+.hero-list::before {
+  content: '';
+
+  width: 60px;
+  height: 1px;
+
+  background-color: #303030;
 }
 
 .hero-list-item {
