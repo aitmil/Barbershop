@@ -45,7 +45,9 @@
         <a class="header-tel link header-nav-link" href="tel:+380441111111"
           >+38 044 111 11 11</a
         >
-        <button class="header-btn btn" type="button">Online-booking</button>
+        <button class="header-btn btn" type="button" data-modal-open>
+          Online-booking
+        </button>
       </div>
     </header>
     <main class="main-page">
@@ -117,7 +119,9 @@
               always "on the same wave" with clients. Therefore, we are always
               ready to improve everyone who comes to us!
             </p>
-            <button class="about-btn btn" type="button">Online-booking</button>
+            <button class="about-btn btn" type="button" data-modal-open>
+              Online-booking
+            </button>
           </div>
         </div>
       </section>
@@ -167,7 +171,9 @@
               </li>
             </ul>
           </div>
-          <button class="price-btn btn" type="button">Online-booking</button>
+          <button class="price-btn btn" type="button" data-modal-open>
+            Online-booking
+          </button>
         </div>
       </section>
       <section class="benefits-section">
@@ -434,5 +440,15 @@
         </ul>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close" type="button" data-modal-close>
+          <svg class="modal-close-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close-black"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
